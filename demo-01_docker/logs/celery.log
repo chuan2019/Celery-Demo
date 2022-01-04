@@ -1,0 +1,1978 @@
+[2022-01-04 08:42:41,117: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-04 08:42:41,121: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-04 08:42:42,138: INFO/MainProcess] mingle: all alone
+[2022-01-04 08:42:42,156: INFO/MainProcess] celery@2192b43cd0cd ready.
+[2022-01-04 08:42:42,162: INFO/MainProcess] Task tasks.add[43e3523d-f29f-4741-98fa-7c270f30c70e] received
+[2022-01-04 08:42:43,167: WARNING/ForkPoolWorker-7] 0
+[2022-01-04 08:42:43,170: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:42:44,174: WARNING/ForkPoolWorker-7] 1
+[2022-01-04 08:42:44,176: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:42:45,183: WARNING/ForkPoolWorker-7] 2
+[2022-01-04 08:42:45,186: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:42:46,191: WARNING/ForkPoolWorker-7] 3
+[2022-01-04 08:42:46,195: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:42:47,199: WARNING/ForkPoolWorker-7] 4
+[2022-01-04 08:42:47,202: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:42:50,539: WARNING/ForkPoolWorker-7] Failed operation _store_result.  Retrying 2 more times.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 47, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 115, in _store_result
+    session = self.ResultSession()
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 106, in ResultSession
+    return session_manager.session_factory(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 88, in session_factory
+    self.prepare_models(engine)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 72, in prepare_models
+    ResultModelBase.metadata.create_all(engine)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/sql/schema.py", line 4664, in create_all
+    bind._run_visitor(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2094, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2086, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+[2022-01-04 08:42:52,586: WARNING/ForkPoolWorker-7] Failed operation _store_result.  Retrying 1 more times.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 47, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 115, in _store_result
+    session = self.ResultSession()
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 106, in ResultSession
+    return session_manager.session_factory(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 88, in session_factory
+    self.prepare_models(engine)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 72, in prepare_models
+    ResultModelBase.metadata.create_all(engine)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/sql/schema.py", line 4664, in create_all
+    bind._run_visitor(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2094, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2086, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+[2022-01-04 08:42:55,235: WARNING/ForkPoolWorker-7] Failed operation _store_result.  Retrying 0 more times.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 47, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 115, in _store_result
+    session = self.ResultSession()
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 106, in ResultSession
+    return session_manager.session_factory(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 88, in session_factory
+    self.prepare_models(engine)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 72, in prepare_models
+    ResultModelBase.metadata.create_all(engine)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/sql/schema.py", line 4664, in create_all
+    bind._run_visitor(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2094, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2086, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+[2022-01-04 08:42:55,243: WARNING/ForkPoolWorker-7] /usr/local/lib/python3.8/site-packages/celery/app/trace.py:657: RuntimeWarning: Exception raised outside body: OperationalError('(psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\n'):
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/celery/app/trace.py", line 517, in trace_task
+    mark_as_done(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/base.py", line 161, in mark_as_done
+    self.store_result(task_id, result, state, request=request)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/base.py", line 482, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 47, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 115, in _store_result
+    session = self.ResultSession()
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 106, in ResultSession
+    return session_manager.session_factory(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 88, in session_factory
+    self.prepare_models(engine)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 72, in prepare_models
+    ResultModelBase.metadata.create_all(engine)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/sql/schema.py", line 4664, in create_all
+    bind._run_visitor(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2094, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2086, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+
+  warn(RuntimeWarning(
+
+[2022-01-04 08:42:57,722: WARNING/ForkPoolWorker-7] Failed operation _store_result.  Retrying 2 more times.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/celery/app/trace.py", line 517, in trace_task
+    mark_as_done(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/base.py", line 161, in mark_as_done
+    self.store_result(task_id, result, state, request=request)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/base.py", line 482, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 47, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 115, in _store_result
+    session = self.ResultSession()
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 106, in ResultSession
+    return session_manager.session_factory(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 88, in session_factory
+    self.prepare_models(engine)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 72, in prepare_models
+    ResultModelBase.metadata.create_all(engine)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/sql/schema.py", line 4664, in create_all
+    bind._run_visitor(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2094, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2086, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 47, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 115, in _store_result
+    session = self.ResultSession()
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 106, in ResultSession
+    return session_manager.session_factory(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 88, in session_factory
+    self.prepare_models(engine)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 72, in prepare_models
+    ResultModelBase.metadata.create_all(engine)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/sql/schema.py", line 4664, in create_all
+    bind._run_visitor(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2094, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2086, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+[2022-01-04 08:42:59,600: WARNING/ForkPoolWorker-7] Failed operation _store_result.  Retrying 1 more times.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/celery/app/trace.py", line 517, in trace_task
+    mark_as_done(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/base.py", line 161, in mark_as_done
+    self.store_result(task_id, result, state, request=request)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/base.py", line 482, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 47, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 115, in _store_result
+    session = self.ResultSession()
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 106, in ResultSession
+    return session_manager.session_factory(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 88, in session_factory
+    self.prepare_models(engine)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 72, in prepare_models
+    ResultModelBase.metadata.create_all(engine)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/sql/schema.py", line 4664, in create_all
+    bind._run_visitor(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2094, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2086, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 47, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 115, in _store_result
+    session = self.ResultSession()
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 106, in ResultSession
+    return session_manager.session_factory(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 88, in session_factory
+    self.prepare_models(engine)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 72, in prepare_models
+    ResultModelBase.metadata.create_all(engine)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/sql/schema.py", line 4664, in create_all
+    bind._run_visitor(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2094, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2086, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+[2022-01-04 08:43:02,007: WARNING/ForkPoolWorker-7] Failed operation _store_result.  Retrying 0 more times.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/celery/app/trace.py", line 517, in trace_task
+    mark_as_done(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/base.py", line 161, in mark_as_done
+    self.store_result(task_id, result, state, request=request)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/base.py", line 482, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 47, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 115, in _store_result
+    session = self.ResultSession()
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 106, in ResultSession
+    return session_manager.session_factory(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 88, in session_factory
+    self.prepare_models(engine)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 72, in prepare_models
+    ResultModelBase.metadata.create_all(engine)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/sql/schema.py", line 4664, in create_all
+    bind._run_visitor(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2094, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2086, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 47, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 115, in _store_result
+    session = self.ResultSession()
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 106, in ResultSession
+    return session_manager.session_factory(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 88, in session_factory
+    self.prepare_models(engine)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 72, in prepare_models
+    ResultModelBase.metadata.create_all(engine)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/sql/schema.py", line 4664, in create_all
+    bind._run_visitor(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2094, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2086, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+[2022-01-04 08:43:03,490: WARNING/MainProcess] Failed operation _store_result.  Retrying 2 more times.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 241, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 47, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 115, in _store_result
+    session = self.ResultSession()
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 106, in ResultSession
+    return session_manager.session_factory(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 88, in session_factory
+    self.prepare_models(engine)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 72, in prepare_models
+    ResultModelBase.metadata.create_all(engine)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/sql/schema.py", line 4664, in create_all
+    bind._run_visitor(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2094, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2086, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 241, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+[2022-01-04 08:43:05,223: WARNING/MainProcess] Failed operation _store_result.  Retrying 1 more times.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 241, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 47, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 115, in _store_result
+    session = self.ResultSession()
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 106, in ResultSession
+    return session_manager.session_factory(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 88, in session_factory
+    self.prepare_models(engine)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 72, in prepare_models
+    ResultModelBase.metadata.create_all(engine)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/sql/schema.py", line 4664, in create_all
+    bind._run_visitor(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2094, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2086, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 241, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+[2022-01-04 08:43:07,399: WARNING/MainProcess] Failed operation _store_result.  Retrying 0 more times.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 241, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 47, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 115, in _store_result
+    session = self.ResultSession()
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 106, in ResultSession
+    return session_manager.session_factory(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 88, in session_factory
+    self.prepare_models(engine)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 72, in prepare_models
+    ResultModelBase.metadata.create_all(engine)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/sql/schema.py", line 4664, in create_all
+    bind._run_visitor(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2094, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2086, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 241, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+[2022-01-04 08:43:07,402: ERROR/MainProcess] Pool callback raised exception: OperationalError('(psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\n')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 241, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/billiard/pool.py", line 1796, in safe_apply_callback
+    fun(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/celery/worker/request.py", line 571, in on_failure
+    self.task.backend.mark_as_failure(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/base.py", line 171, in mark_as_failure
+    self.store_result(task_id, exc, state,
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/base.py", line 482, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 47, in _inner
+    return fun(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 115, in _store_result
+    session = self.ResultSession()
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/__init__.py", line 106, in ResultSession
+    return session_manager.session_factory(
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 88, in session_factory
+    self.prepare_models(engine)
+  File "/usr/local/lib/python3.8/site-packages/celery/backends/database/session.py", line 72, in prepare_models
+    ResultModelBase.metadata.create_all(engine)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/sql/schema.py", line 4664, in create_all
+    bind._run_visitor(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2094, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2086, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 241, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "backend" (172.30.0.2), port 5434 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+[2022-01-04 08:44:28,629: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-04 08:44:28,634: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-04 08:44:29,649: INFO/MainProcess] mingle: all alone
+[2022-01-04 08:44:29,668: INFO/MainProcess] celery@02ec8fc1367f ready.
+[2022-01-04 08:45:02,593: INFO/MainProcess] Task tasks.add[dd61cfce-7f3e-4de9-801b-2c3b85e04788] received
+[2022-01-04 08:45:03,598: WARNING/ForkPoolWorker-7] 0
+[2022-01-04 08:45:03,600: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:45:04,606: WARNING/ForkPoolWorker-7] 1
+[2022-01-04 08:45:04,608: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:45:05,611: WARNING/ForkPoolWorker-7] 2
+[2022-01-04 08:45:05,613: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:45:06,616: WARNING/ForkPoolWorker-7] 3
+[2022-01-04 08:45:06,617: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:45:07,620: WARNING/ForkPoolWorker-7] 4
+[2022-01-04 08:45:07,622: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:45:07,754: INFO/ForkPoolWorker-7] Task tasks.add[dd61cfce-7f3e-4de9-801b-2c3b85e04788] succeeded in 5.158571199979633s: 5
+[2022-01-04 08:47:57,641: INFO/MainProcess] Task tasks.add[5002f412-a3a7-4c1e-99d8-485fdbaeaac2] received
+[2022-01-04 08:47:58,645: WARNING/ForkPoolWorker-7] 0
+[2022-01-04 08:47:58,648: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:47:59,652: WARNING/ForkPoolWorker-7] 1
+[2022-01-04 08:47:59,654: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:48:00,657: WARNING/ForkPoolWorker-7] 2
+[2022-01-04 08:48:00,659: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:48:01,663: WARNING/ForkPoolWorker-7] 3
+[2022-01-04 08:48:01,666: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:48:02,670: WARNING/ForkPoolWorker-7] 4
+[2022-01-04 08:48:02,674: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:48:02,681: INFO/ForkPoolWorker-7] Task tasks.add[5002f412-a3a7-4c1e-99d8-485fdbaeaac2] succeeded in 5.038231399958022s: 9
+[2022-01-04 08:55:55,118: INFO/MainProcess] Task tasks.add[fe092e9f-9121-49ed-a07b-c49a79b2834b] received
+[2022-01-04 08:55:55,122: INFO/MainProcess] Task tasks.add[05157f63-239f-4049-aa46-1c6abe7ffad7] received
+[2022-01-04 08:55:55,125: INFO/MainProcess] Task tasks.add[4e0a1f10-73e4-48d9-9c11-b685025bcb2b] received
+[2022-01-04 08:55:55,129: INFO/MainProcess] Task tasks.add[0a908801-8ea8-441d-a849-fd8d49b21cd1] received
+[2022-01-04 08:55:55,131: INFO/MainProcess] Task tasks.add[fabd5885-583f-46c7-a408-e74e6867fd41] received
+[2022-01-04 08:55:56,123: WARNING/ForkPoolWorker-7] 0
+[2022-01-04 08:55:56,125: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:55:56,127: WARNING/ForkPoolWorker-1] 0
+[2022-01-04 08:55:56,128: WARNING/ForkPoolWorker-8] 0
+[2022-01-04 08:55:56,130: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:55:56,130: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:55:56,131: WARNING/ForkPoolWorker-9] 0
+[2022-01-04 08:55:56,133: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:55:56,134: WARNING/ForkPoolWorker-2] 0
+[2022-01-04 08:55:56,136: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:55:57,128: WARNING/ForkPoolWorker-7] 1
+[2022-01-04 08:55:57,132: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:55:57,132: WARNING/ForkPoolWorker-1] 1
+[2022-01-04 08:55:57,133: WARNING/ForkPoolWorker-8] 1
+[2022-01-04 08:55:57,136: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:55:57,136: WARNING/ForkPoolWorker-9] 1
+[2022-01-04 08:55:57,136: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:55:57,138: WARNING/ForkPoolWorker-2] 1
+[2022-01-04 08:55:57,139: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:55:57,141: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:55:58,136: WARNING/ForkPoolWorker-7] 2
+[2022-01-04 08:55:58,139: WARNING/ForkPoolWorker-1] 2
+[2022-01-04 08:55:58,140: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:55:58,142: WARNING/ForkPoolWorker-9] 2
+[2022-01-04 08:55:58,141: WARNING/ForkPoolWorker-8] 2
+[2022-01-04 08:55:58,144: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:55:58,142: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:55:58,144: WARNING/ForkPoolWorker-2] 2
+[2022-01-04 08:55:58,145: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:55:58,148: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:55:59,144: WARNING/ForkPoolWorker-7] 3
+[2022-01-04 08:55:59,145: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:55:59,147: WARNING/ForkPoolWorker-9] 3
+[2022-01-04 08:55:59,148: WARNING/ForkPoolWorker-1] 3
+[2022-01-04 08:55:59,148: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:55:59,149: WARNING/ForkPoolWorker-8] 3
+[2022-01-04 08:55:59,149: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:55:59,150: WARNING/ForkPoolWorker-2] 3
+[2022-01-04 08:55:59,150: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:55:59,153: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:56:00,151: WARNING/ForkPoolWorker-7] 4
+[2022-01-04 08:56:00,151: WARNING/ForkPoolWorker-9] 4
+[2022-01-04 08:56:00,154: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:56:00,152: WARNING/ForkPoolWorker-1] 4
+[2022-01-04 08:56:00,155: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:56:00,157: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:56:00,155: WARNING/ForkPoolWorker-8] 4
+[2022-01-04 08:56:00,156: WARNING/ForkPoolWorker-2] 4
+[2022-01-04 08:56:00,160: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:56:00,161: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:56:00,162: INFO/ForkPoolWorker-7] Task tasks.add[fe092e9f-9121-49ed-a07b-c49a79b2834b] succeeded in 5.041248900000937s: 0
+[2022-01-04 08:56:00,431: INFO/ForkPoolWorker-8] Task tasks.add[05157f63-239f-4049-aa46-1c6abe7ffad7] succeeded in 5.304210499976762s: 2
+[2022-01-04 08:56:00,462: INFO/ForkPoolWorker-1] Task tasks.add[4e0a1f10-73e4-48d9-9c11-b685025bcb2b] succeeded in 5.3359224000014365s: 4
+[2022-01-04 08:56:00,468: INFO/ForkPoolWorker-9] Task tasks.add[0a908801-8ea8-441d-a849-fd8d49b21cd1] succeeded in 5.336960599990562s: 6
+[2022-01-04 08:56:00,491: INFO/ForkPoolWorker-2] Task tasks.add[fabd5885-583f-46c7-a408-e74e6867fd41] succeeded in 5.358118500094861s: 8
+[2022-01-04 08:56:27,045: INFO/MainProcess] Task tasks.add[5f6a8371-ba8c-4fed-b0c8-6e46761878cb] received
+[2022-01-04 08:56:27,048: INFO/MainProcess] Task tasks.add[24066008-cb4a-4943-a8ac-224cb849b21e] received
+[2022-01-04 08:56:27,051: INFO/MainProcess] Task tasks.add[35c5e59c-8a63-4d83-b5eb-9cb123ae49f7] received
+[2022-01-04 08:56:27,056: INFO/MainProcess] Task tasks.add[24419f43-013c-4d16-ae17-0527cde5b113] received
+[2022-01-04 08:56:27,058: INFO/MainProcess] Task tasks.add[c7de05cd-fa9a-438c-b9bd-872be68f2a06] received
+[2022-01-04 08:56:28,054: WARNING/ForkPoolWorker-8] 0
+[2022-01-04 08:56:28,052: WARNING/ForkPoolWorker-7] 0
+[2022-01-04 08:56:28,054: WARNING/ForkPoolWorker-1] 0
+[2022-01-04 08:56:28,056: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:56:28,058: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:56:28,057: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:56:28,059: WARNING/ForkPoolWorker-9] 0
+[2022-01-04 08:56:28,061: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:56:28,062: WARNING/ForkPoolWorker-2] 0
+[2022-01-04 08:56:28,063: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:56:29,061: WARNING/ForkPoolWorker-8] 1
+[2022-01-04 08:56:29,062: WARNING/ForkPoolWorker-7] 1
+[2022-01-04 08:56:29,061: WARNING/ForkPoolWorker-1] 1
+[2022-01-04 08:56:29,064: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:56:29,064: WARNING/ForkPoolWorker-9] 1
+[2022-01-04 08:56:29,065: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:56:29,066: WARNING/ForkPoolWorker-2] 1
+[2022-01-04 08:56:29,066: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:56:29,069: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:56:29,067: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:56:30,068: WARNING/ForkPoolWorker-8] 2
+[2022-01-04 08:56:30,070: WARNING/ForkPoolWorker-1] 2
+[2022-01-04 08:56:30,069: WARNING/ForkPoolWorker-7] 2
+[2022-01-04 08:56:30,071: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:56:30,074: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:56:30,071: WARNING/ForkPoolWorker-2] 2
+[2022-01-04 08:56:30,072: WARNING/ForkPoolWorker-9] 2
+[2022-01-04 08:56:30,073: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:56:30,076: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:56:30,077: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:56:31,076: WARNING/ForkPoolWorker-7] 3
+[2022-01-04 08:56:31,076: WARNING/ForkPoolWorker-8] 3
+[2022-01-04 08:56:31,077: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:56:31,078: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:56:31,078: WARNING/ForkPoolWorker-1] 3
+[2022-01-04 08:56:31,079: WARNING/ForkPoolWorker-2] 3
+[2022-01-04 08:56:31,080: WARNING/ForkPoolWorker-9] 3
+[2022-01-04 08:56:31,080: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:56:31,081: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:56:31,082: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:56:32,080: WARNING/ForkPoolWorker-7] 4
+[2022-01-04 08:56:32,081: WARNING/ForkPoolWorker-8] 4
+[2022-01-04 08:56:32,083: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:56:32,084: WARNING/ForkPoolWorker-1] 4
+[2022-01-04 08:56:32,084: WARNING/ForkPoolWorker-2] 4
+[2022-01-04 08:56:32,084: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:56:32,085: WARNING/ForkPoolWorker-9] 4
+[2022-01-04 08:56:32,086: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:56:32,090: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:56:32,088: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:56:32,092: INFO/ForkPoolWorker-7] Task tasks.add[5f6a8371-ba8c-4fed-b0c8-6e46761878cb] succeeded in 5.044591499958187s: 0
+[2022-01-04 08:56:32,094: INFO/ForkPoolWorker-8] Task tasks.add[24066008-cb4a-4943-a8ac-224cb849b21e] succeeded in 5.0406716000288725s: 2
+[2022-01-04 08:56:32,095: INFO/ForkPoolWorker-1] Task tasks.add[35c5e59c-8a63-4d83-b5eb-9cb123ae49f7] succeeded in 5.042106300010346s: 4
+[2022-01-04 08:56:32,096: INFO/ForkPoolWorker-9] Task tasks.add[24419f43-013c-4d16-ae17-0527cde5b113] succeeded in 5.038436200004071s: 6
+[2022-01-04 08:56:32,098: INFO/ForkPoolWorker-2] Task tasks.add[c7de05cd-fa9a-438c-b9bd-872be68f2a06] succeeded in 5.037451600073837s: 8
+[2022-01-04 08:56:36,865: INFO/MainProcess] Task tasks.add[48507e6b-3ad4-4345-a72a-6a02d03cb560] received
+[2022-01-04 08:56:36,868: INFO/MainProcess] Task tasks.add[54b04034-312e-4695-b08b-e5986aefccf3] received
+[2022-01-04 08:56:36,872: INFO/MainProcess] Task tasks.add[edea19de-5d48-4263-b892-a70dbb2a594a] received
+[2022-01-04 08:56:36,875: INFO/MainProcess] Task tasks.add[ccb9cd93-c0e2-42d8-b15e-949ffdf85c99] received
+[2022-01-04 08:56:36,880: INFO/MainProcess] Task tasks.add[edf743be-cbdc-4249-94ba-fcae6aefeebf] received
+[2022-01-04 08:56:37,871: WARNING/ForkPoolWorker-7] 0
+[2022-01-04 08:56:37,872: WARNING/ForkPoolWorker-8] 0
+[2022-01-04 08:56:37,874: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:56:37,875: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:56:37,878: WARNING/ForkPoolWorker-1] 0
+[2022-01-04 08:56:37,878: WARNING/ForkPoolWorker-9] 0
+[2022-01-04 08:56:37,880: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:56:37,880: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:56:37,882: WARNING/ForkPoolWorker-2] 0
+[2022-01-04 08:56:37,883: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:56:38,879: WARNING/ForkPoolWorker-7] 1
+[2022-01-04 08:56:38,879: WARNING/ForkPoolWorker-8] 1
+[2022-01-04 08:56:38,882: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:56:38,882: WARNING/ForkPoolWorker-1] 1
+[2022-01-04 08:56:38,883: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:56:38,883: WARNING/ForkPoolWorker-9] 1
+[2022-01-04 08:56:38,886: WARNING/ForkPoolWorker-2] 1
+[2022-01-04 08:56:38,888: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:56:38,891: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:56:38,892: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:56:39,886: WARNING/ForkPoolWorker-7] 2
+[2022-01-04 08:56:39,889: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:56:39,890: WARNING/ForkPoolWorker-8] 2
+[2022-01-04 08:56:39,892: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:56:39,894: WARNING/ForkPoolWorker-1] 2
+[2022-01-04 08:56:39,894: WARNING/ForkPoolWorker-9] 2
+[2022-01-04 08:56:39,895: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:56:39,895: WARNING/ForkPoolWorker-2] 2
+[2022-01-04 08:56:39,896: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:56:39,898: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:56:40,892: WARNING/ForkPoolWorker-7] 3
+[2022-01-04 08:56:40,894: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:56:40,895: WARNING/ForkPoolWorker-8] 3
+[2022-01-04 08:56:40,896: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:56:40,898: WARNING/ForkPoolWorker-1] 3
+[2022-01-04 08:56:40,899: WARNING/ForkPoolWorker-9] 3
+[2022-01-04 08:56:40,899: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:56:40,900: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:56:40,900: WARNING/ForkPoolWorker-2] 3
+[2022-01-04 08:56:40,901: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:56:41,897: WARNING/ForkPoolWorker-7] 4
+[2022-01-04 08:56:41,898: WARNING/ForkPoolWorker-8] 4
+[2022-01-04 08:56:41,900: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:56:41,901: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:56:41,902: WARNING/ForkPoolWorker-1] 4
+[2022-01-04 08:56:41,902: WARNING/ForkPoolWorker-9] 4
+[2022-01-04 08:56:41,904: WARNING/ForkPoolWorker-2] 4
+[2022-01-04 08:56:41,904: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:56:41,906: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:56:41,905: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:56:41,909: INFO/ForkPoolWorker-7] Task tasks.add[48507e6b-3ad4-4345-a72a-6a02d03cb560] succeeded in 5.040924999979325s: 0
+[2022-01-04 08:56:41,909: INFO/ForkPoolWorker-8] Task tasks.add[54b04034-312e-4695-b08b-e5986aefccf3] succeeded in 5.038944299914874s: 2
+[2022-01-04 08:56:41,911: INFO/ForkPoolWorker-1] Task tasks.add[edea19de-5d48-4263-b892-a70dbb2a594a] succeeded in 5.034061499987729s: 4
+[2022-01-04 08:56:41,912: INFO/ForkPoolWorker-2] Task tasks.add[edf743be-cbdc-4249-94ba-fcae6aefeebf] succeeded in 5.030488200020045s: 8
+[2022-01-04 08:56:41,913: INFO/ForkPoolWorker-9] Task tasks.add[ccb9cd93-c0e2-42d8-b15e-949ffdf85c99] succeeded in 5.03547530004289s: 6
+[2022-01-04 08:58:01,872: INFO/MainProcess] Connected to redis://broker:6379/0
+[2022-01-04 08:58:01,879: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-04 08:58:02,894: INFO/MainProcess] mingle: all alone
+[2022-01-04 08:58:02,910: INFO/MainProcess] celery@fd0b5d642933 ready.
+[2022-01-04 08:58:22,090: INFO/MainProcess] Task tasks.add[02a88f48-8ce9-4194-8379-e7c486880a3d] received
+[2022-01-04 08:58:22,095: INFO/MainProcess] Task tasks.add[f127c2c6-7535-4bf4-b261-2873067d05ed] received
+[2022-01-04 08:58:22,097: INFO/MainProcess] Task tasks.add[4d999c2d-8f49-4c51-9783-8ec8cf562bb6] received
+[2022-01-04 08:58:22,101: INFO/MainProcess] Task tasks.add[b0aee40b-2978-4293-aa8b-2dceb657152e] received
+[2022-01-04 08:58:22,104: INFO/MainProcess] Task tasks.add[2bc7debd-958e-4581-8964-e974935ced69] received
+[2022-01-04 08:58:23,095: WARNING/ForkPoolWorker-7] 0
+[2022-01-04 08:58:23,098: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:58:23,098: WARNING/ForkPoolWorker-8] 0
+[2022-01-04 08:58:23,101: WARNING/ForkPoolWorker-1] 0
+[2022-01-04 08:58:23,100: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:58:23,102: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:58:23,106: WARNING/ForkPoolWorker-2] 0
+[2022-01-04 08:58:23,107: WARNING/ForkPoolWorker-9] 0
+[2022-01-04 08:58:23,108: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:58:23,108: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:58:24,101: WARNING/ForkPoolWorker-7] 1
+[2022-01-04 08:58:24,104: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:58:24,105: WARNING/ForkPoolWorker-1] 1
+[2022-01-04 08:58:24,104: WARNING/ForkPoolWorker-8] 1
+[2022-01-04 08:58:24,107: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:58:24,108: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:58:24,110: WARNING/ForkPoolWorker-2] 1
+[2022-01-04 08:58:24,110: WARNING/ForkPoolWorker-9] 1
+[2022-01-04 08:58:24,112: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:58:24,112: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:58:25,108: WARNING/ForkPoolWorker-7] 2
+[2022-01-04 08:58:25,110: WARNING/ForkPoolWorker-1] 2
+[2022-01-04 08:58:25,111: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:58:25,111: WARNING/ForkPoolWorker-8] 2
+[2022-01-04 08:58:25,112: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:58:25,114: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:58:25,115: WARNING/ForkPoolWorker-9] 2
+[2022-01-04 08:58:25,114: WARNING/ForkPoolWorker-2] 2
+[2022-01-04 08:58:25,116: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:58:25,117: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:58:26,114: WARNING/ForkPoolWorker-7] 3
+[2022-01-04 08:58:26,115: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:58:26,116: WARNING/ForkPoolWorker-1] 3
+[2022-01-04 08:58:26,117: WARNING/ForkPoolWorker-8] 3
+[2022-01-04 08:58:26,117: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:58:26,118: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:58:26,119: WARNING/ForkPoolWorker-9] 3
+[2022-01-04 08:58:26,119: WARNING/ForkPoolWorker-2] 3
+[2022-01-04 08:58:26,120: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:58:26,120: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:58:27,123: WARNING/ForkPoolWorker-9] 4
+[2022-01-04 08:58:27,123: WARNING/ForkPoolWorker-8] 4
+[2022-01-04 08:58:27,123: WARNING/ForkPoolWorker-7] 4
+[2022-01-04 08:58:27,128: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 08:58:27,123: WARNING/ForkPoolWorker-1] 4
+[2022-01-04 08:58:27,123: WARNING/ForkPoolWorker-2] 4
+[2022-01-04 08:58:27,127: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 08:58:27,132: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 08:58:27,129: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 08:58:27,131: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 08:58:27,456: INFO/ForkPoolWorker-9] Task tasks.add[b0aee40b-2978-4293-aa8b-2dceb657152e] succeeded in 5.350052300025709s: 6
+[2022-01-04 08:58:27,521: INFO/ForkPoolWorker-2] Task tasks.add[2bc7debd-958e-4581-8964-e974935ced69] succeeded in 5.415508600068279s: 8
+[2022-01-04 08:58:27,525: INFO/ForkPoolWorker-1] Task tasks.add[4d999c2d-8f49-4c51-9783-8ec8cf562bb6] succeeded in 5.4250005999347195s: 4
+[2022-01-04 08:58:27,548: INFO/ForkPoolWorker-7] Task tasks.add[02a88f48-8ce9-4194-8379-e7c486880a3d] succeeded in 5.455001399968751s: 0
+[2022-01-04 08:58:27,557: INFO/ForkPoolWorker-8] Task tasks.add[f127c2c6-7535-4bf4-b261-2873067d05ed] succeeded in 5.460155099979602s: 2
+[2022-01-04 09:07:45,932: INFO/MainProcess] Task tasks.add[e548a3e1-1246-489c-9522-7299cd174ff5] received
+[2022-01-04 09:07:45,935: INFO/MainProcess] Task tasks.add[4cc1f976-1c05-465e-abdc-14ff2017b8c0] received
+[2022-01-04 09:07:45,938: INFO/MainProcess] Task tasks.add[c745ca51-e959-4d8b-b09f-40ae2c336900] received
+[2022-01-04 09:07:45,942: INFO/MainProcess] Task tasks.add[fced4125-9b63-4967-a969-78798bf969ca] received
+[2022-01-04 09:07:45,945: INFO/MainProcess] Task tasks.add[749c1795-dac2-4f18-828c-607ebc3ab065] received
+[2022-01-04 09:07:46,936: WARNING/ForkPoolWorker-7] 0
+[2022-01-04 09:07:46,939: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 09:07:46,941: WARNING/ForkPoolWorker-8] 0
+[2022-01-04 09:07:46,941: WARNING/ForkPoolWorker-1] 0
+[2022-01-04 09:07:46,943: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 09:07:46,944: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 09:07:46,944: WARNING/ForkPoolWorker-9] 0
+[2022-01-04 09:07:46,946: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 09:07:46,949: WARNING/ForkPoolWorker-2] 0
+[2022-01-04 09:07:46,950: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 09:07:47,948: WARNING/ForkPoolWorker-9] 1
+[2022-01-04 09:07:47,947: WARNING/ForkPoolWorker-8] 1
+[2022-01-04 09:07:47,947: WARNING/ForkPoolWorker-7] 1
+[2022-01-04 09:07:47,948: WARNING/ForkPoolWorker-1] 1
+[2022-01-04 09:07:47,953: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 09:07:47,951: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 09:07:47,952: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 09:07:47,953: WARNING/ForkPoolWorker-2] 1
+[2022-01-04 09:07:47,954: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 09:07:47,962: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 09:07:48,960: WARNING/ForkPoolWorker-9] 2
+[2022-01-04 09:07:48,960: WARNING/ForkPoolWorker-7] 2
+[2022-01-04 09:07:48,963: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 09:07:48,961: WARNING/ForkPoolWorker-8] 2
+[2022-01-04 09:07:48,964: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 09:07:48,966: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 09:07:48,964: WARNING/ForkPoolWorker-1] 2
+[2022-01-04 09:07:48,964: WARNING/ForkPoolWorker-2] 2
+[2022-01-04 09:07:48,968: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 09:07:48,969: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 09:07:49,932: WARNING/ForkPoolWorker-9] 3
+[2022-01-04 09:07:49,933: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 09:07:49,934: WARNING/ForkPoolWorker-7] 3
+[2022-01-04 09:07:49,935: WARNING/ForkPoolWorker-8] 3
+[2022-01-04 09:07:49,936: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 09:07:49,936: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 09:07:49,937: WARNING/ForkPoolWorker-1] 3
+[2022-01-04 09:07:49,937: WARNING/ForkPoolWorker-2] 3
+[2022-01-04 09:07:49,939: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 09:07:49,939: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 09:07:50,936: WARNING/ForkPoolWorker-9] 4
+[2022-01-04 09:07:50,939: WARNING/ForkPoolWorker-7] 4
+[2022-01-04 09:07:50,940: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 09:07:50,939: WARNING/ForkPoolWorker-8] 4
+[2022-01-04 09:07:50,941: WARNING/ForkPoolWorker-2] 4
+[2022-01-04 09:07:50,943: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 09:07:50,941: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 09:07:50,941: WARNING/ForkPoolWorker-1] 4
+[2022-01-04 09:07:50,944: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 09:07:50,947: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 09:07:50,948: INFO/ForkPoolWorker-9] Task tasks.add[fced4125-9b63-4967-a969-78798bf969ca] succeeded in 5.037798400036991s: 6
+[2022-01-04 09:07:50,951: INFO/ForkPoolWorker-8] Task tasks.add[4cc1f976-1c05-465e-abdc-14ff2017b8c0] succeeded in 5.04488569998648s: 2
+[2022-01-04 09:07:50,952: INFO/ForkPoolWorker-7] Task tasks.add[e548a3e1-1246-489c-9522-7299cd174ff5] succeeded in 5.051576600060798s: 0
+[2022-01-04 09:07:50,953: INFO/ForkPoolWorker-2] Task tasks.add[749c1795-dac2-4f18-828c-607ebc3ab065] succeeded in 5.0390626000007614s: 8
+[2022-01-04 09:07:50,954: INFO/ForkPoolWorker-1] Task tasks.add[c745ca51-e959-4d8b-b09f-40ae2c336900] succeeded in 5.047380100004375s: 4

@@ -1,0 +1,267 @@
+[2022-01-04 21:46:17,515: INFO/MainProcess] Connected to redis://broker:6379/0
+[2022-01-04 21:46:17,520: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-04 21:46:18,537: INFO/MainProcess] mingle: all alone
+[2022-01-04 21:46:18,556: INFO/MainProcess] celery@bea82587a70d ready.
+[2022-01-04 21:46:41,538: INFO/MainProcess] Task tasks.add[f977c6a6-b687-4232-832e-520338d0582d] received
+[2022-01-04 21:46:41,542: INFO/MainProcess] Task tasks.add[646fccce-41b3-40f1-8035-8121229ca617] received
+[2022-01-04 21:46:41,545: INFO/MainProcess] Task tasks.add[da44a150-2e6a-4ba7-8151-f0ca1b1dec9f] received
+[2022-01-04 21:46:41,549: INFO/MainProcess] Task tasks.add[74b58464-7c23-438a-b508-2d5f10fa4501] received
+[2022-01-04 21:46:41,552: INFO/MainProcess] Task tasks.add[37c171f4-0891-4994-bf07-4445e2d49fe5] received
+[2022-01-04 21:46:42,542: WARNING/ForkPoolWorker-7] 0
+[2022-01-04 21:46:42,543: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 21:46:42,548: WARNING/ForkPoolWorker-1] 0
+[2022-01-04 21:46:42,548: WARNING/ForkPoolWorker-8] 0
+[2022-01-04 21:46:42,549: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 21:46:42,550: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 21:46:42,552: WARNING/ForkPoolWorker-9] 0
+[2022-01-04 21:46:42,553: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 21:46:42,555: WARNING/ForkPoolWorker-2] 0
+[2022-01-04 21:46:42,556: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 21:46:43,546: WARNING/ForkPoolWorker-7] 1
+[2022-01-04 21:46:43,549: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 21:46:43,551: WARNING/ForkPoolWorker-1] 1
+[2022-01-04 21:46:43,552: WARNING/ForkPoolWorker-8] 1
+[2022-01-04 21:46:43,553: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 21:46:43,555: WARNING/ForkPoolWorker-9] 1
+[2022-01-04 21:46:43,554: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 21:46:43,558: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 21:46:43,557: WARNING/ForkPoolWorker-2] 1
+[2022-01-04 21:46:43,562: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 21:46:44,553: WARNING/ForkPoolWorker-7] 2
+[2022-01-04 21:46:44,556: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 21:46:44,557: WARNING/ForkPoolWorker-1] 2
+[2022-01-04 21:46:44,559: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 21:46:44,562: WARNING/ForkPoolWorker-9] 2
+[2022-01-04 21:46:44,562: WARNING/ForkPoolWorker-8] 2
+[2022-01-04 21:46:44,565: WARNING/ForkPoolWorker-2] 2
+[2022-01-04 21:46:44,564: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 21:46:44,566: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 21:46:44,568: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 21:46:45,561: WARNING/ForkPoolWorker-7] 3
+[2022-01-04 21:46:45,562: WARNING/ForkPoolWorker-1] 3
+[2022-01-04 21:46:45,564: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 21:46:45,565: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 21:46:45,570: WARNING/ForkPoolWorker-9] 3
+[2022-01-04 21:46:45,570: WARNING/ForkPoolWorker-8] 3
+[2022-01-04 21:46:45,570: WARNING/ForkPoolWorker-2] 3
+[2022-01-04 21:46:45,572: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 21:46:45,573: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 21:46:45,574: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 21:46:46,568: WARNING/ForkPoolWorker-7] 4
+[2022-01-04 21:46:46,568: WARNING/ForkPoolWorker-1] 4
+[2022-01-04 21:46:46,569: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 21:46:46,570: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 21:46:46,576: WARNING/ForkPoolWorker-8] 4
+[2022-01-04 21:46:46,577: WARNING/ForkPoolWorker-2] 4
+[2022-01-04 21:46:46,577: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 21:46:46,576: WARNING/ForkPoolWorker-9] 4
+[2022-01-04 21:46:46,578: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 21:46:46,579: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 21:46:47,135: INFO/ForkPoolWorker-8] Task tasks.add[646fccce-41b3-40f1-8035-8121229ca617] succeeded in 5.5875037999994674s: 2
+[2022-01-04 21:46:47,220: INFO/ForkPoolWorker-1] Task tasks.add[da44a150-2e6a-4ba7-8151-f0ca1b1dec9f] succeeded in 5.673279600001479s: 8
+[2022-01-04 21:46:47,294: INFO/ForkPoolWorker-2] Task tasks.add[37c171f4-0891-4994-bf07-4445e2d49fe5] succeeded in 5.740352700000585s: 32
+[2022-01-04 21:46:47,313: INFO/ForkPoolWorker-9] Task tasks.add[74b58464-7c23-438a-b508-2d5f10fa4501] succeeded in 5.7616598999993585s: 18
+[2022-01-04 21:46:47,314: INFO/ForkPoolWorker-7] Task tasks.add[f977c6a6-b687-4232-832e-520338d0582d] succeeded in 5.773011900000711s: 0
+[2022-01-04 21:50:57,753: INFO/MainProcess] Connected to redis://broker:6379/0
+[2022-01-04 21:50:57,758: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-04 21:50:58,778: INFO/MainProcess] mingle: all alone
+[2022-01-04 21:50:58,797: INFO/MainProcess] celery@1a28e226be9d ready.
+[2022-01-04 21:55:59,640: INFO/MainProcess] Task tasks.add[293dcd52-5049-40bc-b46e-79f849321dff] received
+[2022-01-04 21:55:59,643: INFO/MainProcess] Task tasks.add[f9a6cd82-f0ba-4762-881f-17e4db269ce9] received
+[2022-01-04 21:55:59,647: INFO/MainProcess] Task tasks.add[1e083e5a-2c3b-477a-af76-6ee71d3ae74b] received
+[2022-01-04 21:55:59,653: INFO/MainProcess] Task tasks.add[57de726f-39d4-4607-9973-2e71187a3f78] received
+[2022-01-04 21:55:59,657: INFO/MainProcess] Task tasks.add[7f1f784c-f2bd-4faf-84a5-ed5ed7b09b56] received
+[2022-01-04 21:56:00,644: WARNING/ForkPoolWorker-7] 0
+[2022-01-04 21:56:00,646: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 21:56:00,650: WARNING/ForkPoolWorker-1] 0
+[2022-01-04 21:56:00,650: WARNING/ForkPoolWorker-8] 0
+[2022-01-04 21:56:00,652: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 21:56:00,652: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 21:56:00,657: WARNING/ForkPoolWorker-9] 0
+[2022-01-04 21:56:00,659: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 21:56:00,661: WARNING/ForkPoolWorker-2] 0
+[2022-01-04 21:56:00,662: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 21:56:01,649: WARNING/ForkPoolWorker-7] 1
+[2022-01-04 21:56:01,652: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 21:56:01,654: WARNING/ForkPoolWorker-1] 1
+[2022-01-04 21:56:01,655: WARNING/ForkPoolWorker-8] 1
+[2022-01-04 21:56:01,656: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 21:56:01,657: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 21:56:01,661: WARNING/ForkPoolWorker-9] 1
+[2022-01-04 21:56:01,663: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 21:56:01,665: WARNING/ForkPoolWorker-2] 1
+[2022-01-04 21:56:01,666: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 21:56:02,655: WARNING/ForkPoolWorker-7] 2
+[2022-01-04 21:56:02,657: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 21:56:02,658: WARNING/ForkPoolWorker-1] 2
+[2022-01-04 21:56:02,659: WARNING/ForkPoolWorker-8] 2
+[2022-01-04 21:56:02,661: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 21:56:02,663: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 21:56:02,665: WARNING/ForkPoolWorker-9] 2
+[2022-01-04 21:56:02,666: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 21:56:02,668: WARNING/ForkPoolWorker-2] 2
+[2022-01-04 21:56:02,669: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 21:56:03,661: WARNING/ForkPoolWorker-7] 3
+[2022-01-04 21:56:03,665: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 21:56:03,665: WARNING/ForkPoolWorker-1] 3
+[2022-01-04 21:56:03,666: WARNING/ForkPoolWorker-8] 3
+[2022-01-04 21:56:03,668: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 21:56:03,668: WARNING/ForkPoolWorker-9] 3
+[2022-01-04 21:56:03,670: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 21:56:03,670: WARNING/ForkPoolWorker-2] 3
+[2022-01-04 21:56:03,671: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 21:56:03,673: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 21:56:04,671: WARNING/ForkPoolWorker-7] 4
+[2022-01-04 21:56:04,672: WARNING/ForkPoolWorker-1] 4
+[2022-01-04 21:56:04,672: WARNING/ForkPoolWorker-8] 4
+[2022-01-04 21:56:04,674: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 21:56:04,675: WARNING/ForkPoolWorker-9] 4
+[2022-01-04 21:56:04,676: WARNING/ForkPoolWorker-2] 4
+[2022-01-04 21:56:04,675: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 21:56:04,676: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 21:56:04,688: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 21:56:04,690: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 21:56:05,293: INFO/ForkPoolWorker-9] Task tasks.add[57de726f-39d4-4607-9973-2e71187a3f78] succeeded in 5.636731499998859s: 18
+[2022-01-04 21:56:05,377: INFO/ForkPoolWorker-2] Task tasks.add[7f1f784c-f2bd-4faf-84a5-ed5ed7b09b56] succeeded in 5.716610300001776s: 32
+[2022-01-04 21:56:05,395: INFO/ForkPoolWorker-8] Task tasks.add[f9a6cd82-f0ba-4762-881f-17e4db269ce9] succeeded in 5.745446900000388s: 2
+[2022-01-04 21:56:05,439: INFO/ForkPoolWorker-1] Task tasks.add[1e083e5a-2c3b-477a-af76-6ee71d3ae74b] succeeded in 5.790362699997786s: 8
+[2022-01-04 21:56:05,456: INFO/ForkPoolWorker-7] Task tasks.add[293dcd52-5049-40bc-b46e-79f849321dff] succeeded in 5.813196400002198s: 0
+[2022-01-04 21:57:49,467: INFO/MainProcess] Connected to redis://broker:6379/0
+[2022-01-04 21:57:49,472: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-04 21:57:50,489: INFO/MainProcess] mingle: all alone
+[2022-01-04 21:57:50,508: INFO/MainProcess] celery@c3492599325e ready.
+[2022-01-04 21:58:24,990: INFO/MainProcess] Task tasks.add[47b3bd08-9769-4f83-8583-52987df718a5] received
+[2022-01-04 21:58:24,993: INFO/MainProcess] Task tasks.add[bd963e4a-5ff1-48ac-81b8-dbe7948e77f7] received
+[2022-01-04 21:58:24,997: INFO/MainProcess] Task tasks.add[563703c7-2cfe-429d-a303-e169a91e63a3] received
+[2022-01-04 21:58:25,001: INFO/MainProcess] Task tasks.add[332de943-a603-4faf-b5bd-99a54793eee2] received
+[2022-01-04 21:58:25,005: INFO/MainProcess] Task tasks.add[7a08826e-cc3d-414f-8c4a-0cb67102efc7] received
+[2022-01-04 21:58:25,997: WARNING/ForkPoolWorker-7] 0
+[2022-01-04 21:58:25,997: WARNING/ForkPoolWorker-8] 0
+[2022-01-04 21:58:25,999: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 21:58:26,000: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 21:58:26,004: WARNING/ForkPoolWorker-9] 0
+[2022-01-04 21:58:26,004: WARNING/ForkPoolWorker-1] 0
+[2022-01-04 21:58:26,007: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 21:58:26,008: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 21:58:26,010: WARNING/ForkPoolWorker-2] 0
+[2022-01-04 21:58:26,012: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 21:58:27,002: WARNING/ForkPoolWorker-7] 1
+[2022-01-04 21:58:27,003: WARNING/ForkPoolWorker-8] 1
+[2022-01-04 21:58:27,004: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 21:58:27,005: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 21:58:27,010: WARNING/ForkPoolWorker-9] 1
+[2022-01-04 21:58:27,011: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 21:58:27,011: WARNING/ForkPoolWorker-1] 1
+[2022-01-04 21:58:27,013: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 21:58:27,014: WARNING/ForkPoolWorker-2] 1
+[2022-01-04 21:58:27,016: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 21:58:28,007: WARNING/ForkPoolWorker-7] 2
+[2022-01-04 21:58:28,008: WARNING/ForkPoolWorker-8] 2
+[2022-01-04 21:58:28,010: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 21:58:28,012: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 21:58:28,013: WARNING/ForkPoolWorker-9] 2
+[2022-01-04 21:58:28,015: WARNING/ForkPoolWorker-1] 2
+[2022-01-04 21:58:28,015: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 21:58:28,017: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 21:58:28,018: WARNING/ForkPoolWorker-2] 2
+[2022-01-04 21:58:28,019: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 21:58:29,014: WARNING/ForkPoolWorker-7] 3
+[2022-01-04 21:58:29,016: WARNING/ForkPoolWorker-8] 3
+[2022-01-04 21:58:29,016: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 21:58:29,017: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 21:58:29,018: WARNING/ForkPoolWorker-9] 3
+[2022-01-04 21:58:29,019: WARNING/ForkPoolWorker-1] 3
+[2022-01-04 21:58:29,021: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 21:58:29,021: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 21:58:29,022: WARNING/ForkPoolWorker-2] 3
+[2022-01-04 21:58:29,023: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 21:58:30,020: WARNING/ForkPoolWorker-7] 4
+[2022-01-04 21:58:30,023: WARNING/ForkPoolWorker-9] 4
+[2022-01-04 21:58:30,021: WARNING/ForkPoolWorker-8] 4
+[2022-01-04 21:58:30,024: WARNING/ForkPoolWorker-1] 4
+[2022-01-04 21:58:30,027: WARNING/ForkPoolWorker-8] 
+
+[2022-01-04 21:58:30,024: WARNING/ForkPoolWorker-7] 
+
+[2022-01-04 21:58:30,025: WARNING/ForkPoolWorker-9] 
+
+[2022-01-04 21:58:30,025: WARNING/ForkPoolWorker-2] 4
+[2022-01-04 21:58:30,037: WARNING/ForkPoolWorker-2] 
+
+[2022-01-04 21:58:30,029: WARNING/ForkPoolWorker-1] 
+
+[2022-01-04 21:58:30,610: INFO/ForkPoolWorker-8] Task tasks.add[bd963e4a-5ff1-48ac-81b8-dbe7948e77f7] succeeded in 5.614076300000306s: 2
+[2022-01-04 21:58:30,636: INFO/ForkPoolWorker-9] Task tasks.add[332de943-a603-4faf-b5bd-99a54793eee2] succeeded in 5.6327509000002465s: 18
+[2022-01-04 21:58:30,649: INFO/ForkPoolWorker-7] Task tasks.add[47b3bd08-9769-4f83-8583-52987df718a5] succeeded in 5.6535470000017085s: 0
+[2022-01-04 21:58:30,754: INFO/ForkPoolWorker-2] Task tasks.add[7a08826e-cc3d-414f-8c4a-0cb67102efc7] succeeded in 5.7462403000026825s: 32
+[2022-01-04 21:58:30,769: INFO/ForkPoolWorker-1] Task tasks.add[563703c7-2cfe-429d-a303-e169a91e63a3] succeeded in 5.766271399999823s: 8
