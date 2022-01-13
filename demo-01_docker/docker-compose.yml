@@ -29,3 +29,15 @@ services:
           - broker
           - backend
 
+    flower:
+        build: .
+        container_name: demo_flower
+        command: celery --app=tasks flower --port=5555
+        ports:
+          - "5555:5555"
+        environment:
+          - CELERY_BROKER_URL=redis://broker:6379/0
+          - CELERY_RESULT_BACKEND=db+postgresql://dbc:dbc@backend:5432/celery
+        depends_on:
+          - broker
+          - backend
