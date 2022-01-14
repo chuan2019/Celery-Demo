@@ -3,7 +3,7 @@ from celery import Celery
 import time
 
 broker_url  = os.environ.get("CELERY_BROKER_URL",
-                             "redis://localhost:6378/0"),
+                             "redis://localhost:6378/0")
 res_backend = os.environ.get("CELERY_RESULT_BACKEND",
                              "db+postgresql://dbc:dbc@localhost:5434/celery")
 
