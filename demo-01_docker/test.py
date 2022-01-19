@@ -1,3 +1,4 @@
+# pylint: disable=C0116
 import time
 from celery.result import AsyncResult
 from tasks import add
