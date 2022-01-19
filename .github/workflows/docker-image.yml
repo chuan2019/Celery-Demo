@@ -17,5 +17,5 @@ jobs:
     - name: Build the Docker image
       run: |
         cd demo-01_docker && docker build . --file Dockerfile --tag demo-01-docker:$(date +%s)
-        cd demo-02_multi-queue && docker build . --file Dockerfile --tag demo-02-docker:$(date +%s)
+        cd ../demo-02_multi-queue && docker build . --file Dockerfile --tag demo-02-docker:$(date +%s)
       
