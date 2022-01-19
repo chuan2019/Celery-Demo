@@ -1,3 +1,5 @@
+"""test.py"""
+# pylint: disable=C0116
 import time
 from celery.result import AsyncResult
 from tasks import celery_app
@@ -49,4 +51,3 @@ def run_task():
 
 if __name__ == '__main__':
     run_task()
-
