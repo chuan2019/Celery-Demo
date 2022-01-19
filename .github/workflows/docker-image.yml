@@ -16,6 +16,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: |
-        docker build . --file demo-01_docker/Dockerfile --tag demo-01-docker:$(date +%s)
-        docker build . --file demo-02_multi-queue/Dockerfile --tag demo-02-docker:$(date +%s)
+        cd demo-01_docker && docker build . --file Dockerfile --tag demo-01-docker:$(date +%s)
+        cd demo-02_multi-queue && docker build . --file Dockerfile --tag demo-02-docker:$(date +%s)
       
