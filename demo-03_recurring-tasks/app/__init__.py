@@ -24,6 +24,7 @@ def make_celery(app=None):
     '''
     if app is None:
         celery = Celery(__name__, backend=backend, broker=broker)
+        celery.conf.update(timezone='America/Los_Angeles')
     else:
         celery = Celery(
             app.import_name,
