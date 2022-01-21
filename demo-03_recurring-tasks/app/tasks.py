@@ -1,4 +1,5 @@
 """tasks.py"""
+# pylint: disable=W0613
 import json
 import requests as rq
 from celery.schedules import crontab
@@ -30,7 +31,7 @@ def weather_forecast(self, zip_code):
         day_weather['maxwind_mph'] = day_res['day']['maxwind_mph']
         day_weather['avghumidity'] = day_res['day']['avghumidity']
         day_weather['conidition'] = day_res['day']['condition']['text']
-        weather['forecast'].append(day_weather)        
+        weather['forecast'].append(day_weather)
     return weather
 
 @celery_app.task(bind=True)
@@ -68,4 +69,3 @@ def schedule_periodic_tasks(sender, **kwargs):
         crontab(hour=7, minute=30, day_of_week=1),
         weather_forecast.s('90717'),
     )
-
