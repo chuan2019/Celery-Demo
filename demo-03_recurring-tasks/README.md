@@ -9,3 +9,5 @@ the Postgres database.
 
 To access the Flower web site monitoring the task queue, you can simply visit http://localhost:5555
 on the machine you started the application.
+
+Detailed explanation on how to schedule recurring tasks using Celery Beat is provided in this post: <a href="https://python.plainenglish.io/scheduling-jobs-2-using-celery-7464ca0aed6d">How to Schedule Recurring Jobs or Tasks Using Celery</a>.
