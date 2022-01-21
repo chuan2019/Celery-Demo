@@ -1,0 +1,65 @@
+version: "3"
+services:
+    broker:
+        image: redis:latest
+        container_name: cb-demo-01_broker
+        environment:
+          - REDIS_REPLICATION_MODE=master
+        ports:
+          - "16379:6379"
+        volumes:
+          - ./redis_01/data:/var/lib/redis
+          - ./redis_01/conf:/usr/local/etc/redis/redis.conf
+        command: redis-server --requirepass redis123
+
+    backend:
+        image: postgres:14.1
+        container_name: scheduler_backend_01
+        environment:
+          - POSTGRES_USER=dbc
+          - POSTGRES_PASSWORD=dbc
+          - POSTGRES_DB=scheduler
+        ports:
+          - "15432:5432"
+        volumes:
+          - ./pgdb_01:/var/lib/postgresql/data
+
+    worker:
+        build: .
+        container_name: cb-demo-01_worker
+        command: celery --app=app.tasks worker --loglevel=info --logfile=app/logs/worker.log
+        volumes:
+          - ./app:/usr/src/app
+        environment:
+          - CELERY_BROKER_URL=redis://:redis123@broker:6379/0
+          - CELERY_RESULT_BACKEND=db+postgresql://dbc:dbc@backend:5432/scheduler
+        depends_on:
+          - broker
+          - backend
+
+    scheduler:
+        build: .
+        container_name: cb-demo-01_scheduler
+        command: celery --app=app.tasks beat --loglevel=info --logfile=app/logs/scheduler.log
+        volumes:
+          - ./app:/usr/src/app
+        environment:
+          - CELERY_BROKER_URL=redis://:redis123@broker:6379/0
+          - CELERY_RESULT_BACKEND=db+postgresql://dbc:dbc@backend:5432/scheduler
+        depends_on:
+          - broker
+          - backend
+
+    flower:
+        build: .
+        container_name: cb-demo-01_flower
+        command: celery --app=app.tasks flower --port=5555
+        ports:
+          - "5555:5555"
+        environment:
+          - CELERY_BROKER_URL=redis://:redis123@broker:6379/0
+          - CELERY_RESULT_BACKEND=db+postgresql://dbc:dbc@backend:5432/scheduler
+        depends_on:
+          - broker
+          - backend
+
