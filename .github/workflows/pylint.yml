@@ -22,3 +22,4 @@ jobs:
       run: |
         pylint `find demo-01_docker -name \*.py -print`
         pylint `find demo-02_multi-queue -name \*.py -print`
+        pylint `find demo-03_recurring-tasks -name \*.py -print`
