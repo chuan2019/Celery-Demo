@@ -1,3 +1,4 @@
+"""__init__.py"""
 import os
 import yaml
 from celery import Celery
@@ -5,7 +6,7 @@ from celery import Celery
 base_dir = os.path.dirname(os.path.realpath(__file__))
 config_file = os.path.join(base_dir, 'config.yml')
 
-with open(config_file, 'r') as fp:
+with open(config_file, 'r', encoding="utf-8") as fp:
     try:
         config = yaml.safe_load(fp)
     except yaml.YAMLError as err:
@@ -16,6 +17,11 @@ backend = os.environ.get('CELERY_RESULT_BACKEND', config.get('demo_backend'))
 API_KEY = config.get('api_key')
 
 def make_celery(app=None):
+    '''
+    celery factory: creating and returning a new celery instance
+    :app: if None, the celery instance is "integrated" with the provided app
+          typical example is flask web app etc.
+    '''
     if app is None:
         celery = Celery(__name__, backend=backend, broker=broker)
     else:
@@ -27,7 +33,8 @@ def make_celery(app=None):
         celery.conf.update(app.config)
         TaskBase = celery.Task
 
-        class ContextTask(TaskBase):
+        class ContextTask(TaskBase): # pylint: disable=R0903
+            '''Context for the task'''
             abstract = True
 
             def __call__(self, *args, **kwargs):
@@ -37,4 +44,3 @@ def make_celery(app=None):
         celery.Task = ContextTask
 
     return celery
-
