@@ -1,0 +1,29 @@
+[2022-01-23 05:31:25,184: INFO/MainProcess] Connected to redis://:**@broker:6379/0
+[2022-01-23 05:31:25,190: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-23 05:31:26,200: INFO/MainProcess] mingle: all alone
+[2022-01-23 05:31:26,211: INFO/MainProcess] celery@f3fb3111f988 ready.
+[2022-01-23 05:31:30,564: INFO/MainProcess] Events of group {task} enabled by remote.
+[2022-01-23 05:31:34,617: INFO/MainProcess] Task jobs.tasks.current_weather[990296e9-98ab-4f7e-ac44-70927a0a334e] received
+[2022-01-23 05:31:35,281: INFO/ForkPoolWorker-7] Task jobs.tasks.current_weather[990296e9-98ab-4f7e-ac44-70927a0a334e] succeeded in 0.6615247939989786s: {'last_updated': '2022-01-22 21:15', 'condition': 'Clear', 'temp_c': 15.0, 'wind_mph': 0.0, 'humidity': 26}
+[2022-01-23 05:31:44,611: INFO/MainProcess] Task jobs.tasks.current_weather[9a95761a-4f0d-43e3-8a85-06886dffbe60] received
+[2022-01-23 05:31:44,689: INFO/ForkPoolWorker-7] Task jobs.tasks.current_weather[9a95761a-4f0d-43e3-8a85-06886dffbe60] succeeded in 0.07465936000153306s: {'last_updated': '2022-01-22 21:15', 'condition': 'Clear', 'temp_c': 15.0, 'wind_mph': 0.0, 'humidity': 26}
+[2022-01-23 05:31:54,611: INFO/MainProcess] Task jobs.tasks.current_weather[85899819-1b48-42a7-8ec3-e5bea7a3a127] received
+[2022-01-23 05:31:55,677: INFO/ForkPoolWorker-7] Task jobs.tasks.current_weather[85899819-1b48-42a7-8ec3-e5bea7a3a127] succeeded in 1.0629939059999742s: {'last_updated': '2022-01-22 21:15', 'condition': 'Clear', 'temp_c': 15.0, 'wind_mph': 0.0, 'humidity': 26}
+[2022-01-23 05:32:04,614: INFO/MainProcess] Task jobs.tasks.current_weather[25ac2980-e05f-457d-8f1c-7f194aaaf5f4] received
+[2022-01-23 05:32:04,691: INFO/ForkPoolWorker-7] Task jobs.tasks.current_weather[25ac2980-e05f-457d-8f1c-7f194aaaf5f4] succeeded in 0.07443075300034252s: {'last_updated': '2022-01-22 21:15', 'condition': 'Clear', 'temp_c': 15.0, 'wind_mph': 0.0, 'humidity': 26}
+[2022-01-23 05:32:14,616: INFO/MainProcess] Task jobs.tasks.current_weather[52f8dfee-e2b7-4e44-8874-5544381f0527] received
+[2022-01-23 05:32:14,699: INFO/ForkPoolWorker-7] Task jobs.tasks.current_weather[52f8dfee-e2b7-4e44-8874-5544381f0527] succeeded in 0.07914243500090379s: {'last_updated': '2022-01-22 21:15', 'condition': 'Clear', 'temp_c': 15.0, 'wind_mph': 0.0, 'humidity': 26}
+[2022-01-23 05:32:24,612: INFO/MainProcess] Task jobs.tasks.current_weather[c5d51b84-62db-42fa-970a-211432e4c1de] received
+[2022-01-23 05:32:24,756: INFO/ForkPoolWorker-7] Task jobs.tasks.current_weather[c5d51b84-62db-42fa-970a-211432e4c1de] succeeded in 0.14173786500032293s: {'last_updated': '2022-01-22 21:15', 'condition': 'Clear', 'temp_c': 15.0, 'wind_mph': 0.0, 'humidity': 26}
+[2022-01-23 05:32:34,616: INFO/MainProcess] Task jobs.tasks.current_weather[835aea26-d814-4449-9d65-ce59f64880d5] received
+[2022-01-23 05:32:35,098: INFO/ForkPoolWorker-7] Task jobs.tasks.current_weather[835aea26-d814-4449-9d65-ce59f64880d5] succeeded in 0.4785396490005951s: {'last_updated': '2022-01-22 21:30', 'condition': 'Clear', 'temp_c': 15.0, 'wind_mph': 0.0, 'humidity': 26}
+[2022-01-23 05:32:44,618: INFO/MainProcess] Task jobs.tasks.current_weather[d87d15d9-ff13-4e36-abe7-636b522aeaab] received
+[2022-01-23 05:32:44,854: INFO/ForkPoolWorker-7] Task jobs.tasks.current_weather[d87d15d9-ff13-4e36-abe7-636b522aeaab] succeeded in 0.23355983900000865s: {'last_updated': '2022-01-22 21:30', 'condition': 'Clear', 'temp_c': 15.0, 'wind_mph': 0.0, 'humidity': 26}
+[2022-01-23 05:32:54,616: INFO/MainProcess] Task jobs.tasks.current_weather[8c2f1212-0bf2-4095-a700-9c72a92b4fdc] received
+[2022-01-23 05:32:54,864: INFO/ForkPoolWorker-7] Task jobs.tasks.current_weather[8c2f1212-0bf2-4095-a700-9c72a92b4fdc] succeeded in 0.2445698440005799s: {'last_updated': '2022-01-22 21:15', 'condition': 'Clear', 'temp_c': 15.0, 'wind_mph': 0.0, 'humidity': 26}
+[2022-01-23 05:33:04,617: INFO/MainProcess] Task jobs.tasks.current_weather[0fc7bb6e-c584-46e1-96cb-db8e147e5807] received
+[2022-01-23 05:33:04,870: INFO/ForkPoolWorker-7] Task jobs.tasks.current_weather[0fc7bb6e-c584-46e1-96cb-db8e147e5807] succeeded in 0.2500787609988038s: {'last_updated': '2022-01-22 21:15', 'condition': 'Clear', 'temp_c': 15.0, 'wind_mph': 0.0, 'humidity': 26}
+[2022-01-23 05:33:14,616: INFO/MainProcess] Task jobs.tasks.current_weather[0923cf37-01a0-4d8e-817e-b31c30f46cca] received
+[2022-01-23 05:33:14,854: INFO/ForkPoolWorker-7] Task jobs.tasks.current_weather[0923cf37-01a0-4d8e-817e-b31c30f46cca] succeeded in 0.25562415400054306s: {'last_updated': '2022-01-22 21:15', 'condition': 'Clear', 'temp_c': 15.0, 'wind_mph': 0.0, 'humidity': 26}
+[2022-01-23 05:33:24,616: INFO/MainProcess] Task jobs.tasks.current_weather[3f6e6c61-2201-4db4-ac5f-320c5add1320] received
+[2022-01-23 05:33:24,861: INFO/ForkPoolWorker-7] Task jobs.tasks.current_weather[3f6e6c61-2201-4db4-ac5f-320c5add1320] succeeded in 0.24170221499844047s: {'last_updated': '2022-01-22 21:30', 'condition': 'Clear', 'temp_c': 15.0, 'wind_mph': 0.0, 'humidity': 26}

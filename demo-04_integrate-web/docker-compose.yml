@@ -1,0 +1,93 @@
+version: "3"
+services:
+    broker:
+        image: redis:latest
+        container_name: demo-04_broker
+        environment:
+          - REDIS_REPLICATION_MODE=master
+        ports:
+          - "16379:6379"
+        volumes:
+          - ./data/redis_04/data:/var/lib/redis
+          - ./data/redis_04/conf:/usr/local/etc/redis/redis.conf
+        command: redis-server --requirepass redis123
+
+    backend:
+        image: postgres:14.1
+        container_name: demo-04_backend
+        environment:
+          - POSTGRES_USER=dbc
+          - POSTGRES_PASSWORD=dbc
+          - POSTGRES_DB=scheduler
+        ports:
+          - "15432:5432"
+        volumes:
+          - ./data/pgdb_04:/var/lib/postgresql/data
+
+    worker:
+        build:
+            context: .
+            dockerfile: dockerfile.jobs
+        container_name: demo-04_worker
+        command: celery --app=jobs.tasks worker --loglevel=info --logfile=jobs/logs/worker.log
+        volumes:
+          - ./project/jobs:/usr/src/jobs
+        environment:
+          - CELERY_BROKER_URL=redis://:redis123@broker:6379/0
+          - CELERY_RESULT_BACKEND=db+postgresql://dbc:dbc@backend:5432/scheduler
+        depends_on:
+          - broker
+          - backend
+
+    scheduler:
+        build:
+            context: .
+            dockerfile: dockerfile.jobs
+        container_name: demo-04_scheduler
+        command: celery --app=jobs.tasks beat --loglevel=info --logfile=jobs/logs/scheduler.log
+        volumes:
+          - ./project/jobs:/usr/src/jobs
+        environment:
+          - CELERY_BROKER_URL=redis://:redis123@broker:6379/0
+          - CELERY_RESULT_BACKEND=db+postgresql://dbc:dbc@backend:5432/scheduler
+        depends_on:
+          - broker
+          - backend
+
+    flower:
+        build:
+            context: .
+            dockerfile: dockerfile.jobs
+        container_name: demo-04_flower
+        command: celery --app=jobs.tasks flower --port=5555
+        ports:
+          - "5555:5555"
+        environment:
+          - CELERY_BROKER_URL=redis://:redis123@broker:6379/0
+          - CELERY_RESULT_BACKEND=db+postgresql://dbc:dbc@backend:5432/scheduler
+        volumes:
+          - ./project/jobs:/usr/src/jobs
+        depends_on:
+          - broker
+          - backend
+          - scheduler
+          - worker
+
+    web:
+        build:
+            context: .
+            dockerfile: dockerfile.web
+        container_name: demo-04_web
+        working_dir: /usr/src/project/web
+        command: flask run --host=0.0.0.0 --port=8080
+        environment:
+          - FLASK_APP=app
+          - CELERY_RESULT_BACKEND=db+postgresql://dbc:dbc@backend:5432/scheduler
+        ports:
+          - "8080:8080"
+        depends_on:
+          - broker
+          - backend
+          - scheduler
+          - worker
+

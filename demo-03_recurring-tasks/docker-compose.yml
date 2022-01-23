@@ -2,19 +2,19 @@ version: "3"
 services:
     broker:
         image: redis:latest
-        container_name: cb-demo-01_broker
+        container_name: demo-03_broker
         environment:
           - REDIS_REPLICATION_MODE=master
         ports:
           - "16379:6379"
         volumes:
-          - ./redis_01/data:/var/lib/redis
-          - ./redis_01/conf:/usr/local/etc/redis/redis.conf
+          - ./data/redis/data:/var/lib/redis
+          - ./data/redis/conf:/usr/local/etc/redis/redis.conf
         command: redis-server --requirepass redis123
 
     backend:
         image: postgres:14.1
-        container_name: scheduler_backend_01
+        container_name: demo-03_backend
         environment:
           - POSTGRES_USER=dbc
           - POSTGRES_PASSWORD=dbc
@@ -22,11 +22,11 @@ services:
         ports:
           - "15432:5432"
         volumes:
-          - ./pgdb_01:/var/lib/postgresql/data
+          - ./data/pgdb:/var/lib/postgresql/data
 
     worker:
         build: .
-        container_name: cb-demo-01_worker
+        container_name: demo-03_worker
         command: celery --app=app.tasks worker --loglevel=info --logfile=app/logs/worker.log
         volumes:
           - ./app:/usr/src/app
@@ -39,7 +39,7 @@ services:
 
     scheduler:
         build: .
-        container_name: cb-demo-01_scheduler
+        container_name: demo-03_scheduler
         command: celery --app=app.tasks beat --loglevel=info --logfile=app/logs/scheduler.log
         volumes:
           - ./app:/usr/src/app
@@ -52,7 +52,7 @@ services:
 
     flower:
         build: .
-        container_name: cb-demo-01_flower
+        container_name: demo-03_flower
         command: celery --app=app.tasks flower --port=5555
         ports:
           - "5555:5555"

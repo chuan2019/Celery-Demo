@@ -1,0 +1,13 @@
+[2022-01-23 05:31:24,595: INFO/MainProcess] beat: Starting...
+[2022-01-23 05:31:34,609: INFO/MainProcess] Scheduler: Sending due task jobs.tasks.current_weather('Los Angeles') (jobs.tasks.current_weather)
+[2022-01-23 05:31:44,608: INFO/MainProcess] Scheduler: Sending due task jobs.tasks.current_weather('Los Angeles') (jobs.tasks.current_weather)
+[2022-01-23 05:31:54,608: INFO/MainProcess] Scheduler: Sending due task jobs.tasks.current_weather('Los Angeles') (jobs.tasks.current_weather)
+[2022-01-23 05:32:04,608: INFO/MainProcess] Scheduler: Sending due task jobs.tasks.current_weather('Los Angeles') (jobs.tasks.current_weather)
+[2022-01-23 05:32:14,609: INFO/MainProcess] Scheduler: Sending due task jobs.tasks.current_weather('Los Angeles') (jobs.tasks.current_weather)
+[2022-01-23 05:32:24,609: INFO/MainProcess] Scheduler: Sending due task jobs.tasks.current_weather('Los Angeles') (jobs.tasks.current_weather)
+[2022-01-23 05:32:34,612: INFO/MainProcess] Scheduler: Sending due task jobs.tasks.current_weather('Los Angeles') (jobs.tasks.current_weather)
+[2022-01-23 05:32:44,612: INFO/MainProcess] Scheduler: Sending due task jobs.tasks.current_weather('Los Angeles') (jobs.tasks.current_weather)
+[2022-01-23 05:32:54,612: INFO/MainProcess] Scheduler: Sending due task jobs.tasks.current_weather('Los Angeles') (jobs.tasks.current_weather)
+[2022-01-23 05:33:04,613: INFO/MainProcess] Scheduler: Sending due task jobs.tasks.current_weather('Los Angeles') (jobs.tasks.current_weather)
+[2022-01-23 05:33:14,613: INFO/MainProcess] Scheduler: Sending due task jobs.tasks.current_weather('Los Angeles') (jobs.tasks.current_weather)
+[2022-01-23 05:33:24,613: INFO/MainProcess] Scheduler: Sending due task jobs.tasks.current_weather('Los Angeles') (jobs.tasks.current_weather)
