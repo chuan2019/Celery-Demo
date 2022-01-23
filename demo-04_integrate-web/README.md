@@ -1,4 +1,4 @@
-# Demo #4: Scheduling Recurring Tasks using Celery Beat (2) - integrating with web
+# Demo #4: Integraing the task scheduler with a web service
 
 In this demo, the task scheduler in demo 3 is integrated with a web app built using F.A.B.
 
