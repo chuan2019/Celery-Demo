@@ -1,11 +1,8 @@
-# Demo #3: Scheduling Recurring Tasks using Celery Beat
+# Demo #4: Scheduling Recurring Tasks using Celery Beat (2) - integrating with web
 
-To start the application, just need to run one command: `docker-compose up -d --build`
+In this demo, the task scheduler in demo 3 is integrated with a web app built using F.A.B.
 
-After the application is up and running, once every 10 seconds, a record about the weather
-information in Los Angeles is inserted into the Postgres database. Every Monday morning at
-7:30am, a record about the weather forecast in the city of Lomita (90717) is inserted into
-the Postgres database.
+To start services, you can just simply run one single command: `docker-compose up -d --build`,
+then the web service can accessed at `http://localhost:8080`.
 
-To access the Flower web site monitoring the task queue, you can simply visit http://localhost:5555
-on the machine you started the application.
+Detailed explanation is provided in this my tutorial: 
